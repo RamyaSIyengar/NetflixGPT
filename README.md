@@ -2,6 +2,9 @@
 
 - create react app
 - configured TailwindCSS
+- Header with Netflix logo
+- Login Form
+- Sign up form
 
 
 # Features

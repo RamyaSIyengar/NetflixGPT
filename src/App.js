@@ -1,11 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Body from "./components/Body"
 function App() {
   return (
-    <div className="App">
-      <h1  className="font-bold text-4xl text-red-700  ">NETFLIX</h1>
-    </div>
+     <Body />
   );
 }
 
