@@ -3,15 +3,19 @@
 - create react app
 - configured TailwindCSS
 - Header with Netflix logo
+- Routing of App
 - Login Form
 - Sign up form
+- Form Validation
+- useRef Hook
 
 
 # Features
 
 - Login/Sign Up
-   - Sign Up/Sing in form
-   - redirect to Broser Page
+   - Sign Up/Sign in form
+      - used useState 
+   - redirect to Browser Page
 
 - /Browse page (only loads after aunthentication)
    - Header
