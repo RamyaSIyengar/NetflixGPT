@@ -17,7 +17,9 @@ const Login = () => {
       // console.log(email.current.value)
       // console.log(password.current.value)
 
-      const message = !isSignIn ? checkValidData(fullName.current.value, email.current.value,password.current.value ) : checkValidData(email.current.value,password.current.value )
+      const message = !isSignIn ? checkValidData(fullName.current.value, email.current.value,password.current.value ) 
+      :
+       checkValidData(email.current.value,password.current.value )
       console.log(fullName)
       setErrorMessage(message)
   }
@@ -31,7 +33,7 @@ const Login = () => {
       <Header />
 
       <div className='absolute'>
-        <img className='transform: scale-130 bg-gradient-to-t from-black ' src='https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg'
+        <img className='transform: scale-130 bg-gradient-to-t from-black bg-blend-lighten md:bg-blend-darken ' src='https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg'
           alt='bg img' />
       </div>
 
@@ -59,7 +61,7 @@ const Login = () => {
            className='p-4  mb-6 m-2 w-full bg-gray-800 rounded-lg text-white ' 
             />
 
-        <p className='text-orange-400 font-semibold p-1 m-1'>{errorMessage}</p>
+        <p className='text-red-400 font-semibold p-1 m-1'>{errorMessage}</p>
 
         <button 
         className='p-4 m-2 w-full bg-red-600 font-semibold text-white rounded-lg'
