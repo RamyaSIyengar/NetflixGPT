@@ -8,6 +8,12 @@
 - Sign up form
 - Form Validation
 - useRef Hook
+- Firebase SetUp
+- Deploying the app to production [(https://netflixgpt-cfb8a.web.app/)]
+- Create Sign Up user account
+- Implement Sign In user API
+- Created Redux store with userSlice
+
 
 
 # Features
