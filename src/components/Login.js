@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react'
 import Header from './Header'
 import { checkValidData } from '../utils/validate'
+import {  createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
+import { auth } from '../utils/firebase';
+
 
 const Login = () => {
 
@@ -17,11 +20,49 @@ const Login = () => {
       // console.log(email.current.value)
       // console.log(password.current.value)
 
-      const message = !isSignIn ? checkValidData(fullName.current.value, email.current.value,password.current.value ) 
-      :
-       checkValidData(email.current.value,password.current.value )
-      console.log(fullName)
+      const message =  checkValidData(email.current.value,password.current.value )
       setErrorMessage(message)
+      if(message) return ;// it will not go ahead if there is an err
+
+      //Sign in/ Sign up
+
+      if(!isSignIn){
+        //Sign Up Logic
+        createUserWithEmailAndPassword(
+          auth,
+          email.current.value,
+          password.current.value
+        )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user)
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode+ "" +errorMessage)
+        });
+      
+
+      }
+      else {
+        //Sign In Logic
+        signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user)
+        })
+       .catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message;
+       setErrorMessage(errorCode+ "" +errorMessage)
+  });
+
+      }
+
+
   }
 
   const toggleSignInForm = () => {
