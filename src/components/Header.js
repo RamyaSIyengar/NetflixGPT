@@ -1,36 +1,59 @@
-import React from 'react'
-import { auth} from "../utils/firebase"
+import React,  { useEffect }  from 'react'
+import { auth, } from "../utils/firebase"
 import { signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser, removeUser } from '../utils/userSlice';
+import {onAuthStateChanged} from "firebase/auth"
+import NETFLIX_LOGO, {PHOTO_URL} from "../utils/constants"
 
 const Header = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector(store => store.user);
 
   const handleSignOut = () =>{
-  
-  signOut(auth).then(() => {
-    navigate("/")
-  }).catch((error) => {
-  // An error happened.
-   navigate("/error");
-  });
+     signOut(auth).then(() => {
+    }).catch((error) => {
+    // An error happened.
+    navigate("/error");
+    });
 
-  }
+  };
+
+  useEffect(() => {
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        
+        const {uid, email, displayName} = user;
+        dispatch(addUser({uid:uid, email:email, displayName:displayName, photoURL:PHOTO_URL}))
+        navigate("/browse")
+        
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/")
+      }
+    });
+    // unsubsribe when component unmounts
+    return () => unsubscribe();
+   }, [])
 
   return (
-    <div className='bg-gradient-to-b from-black pl-3 absolute z-10 w-full flex justify-between'>
-        <img className='w-48 mx-3  '
-         src='https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png'
+    <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black  z-10  flex justify-between '>
+        <img className='w-40 mx-3 md:mx-0 '
+         src= {NETFLIX_LOGO}
         alt='NetflixLogo'
         />
 
       {user && <div className='flex  p-2 '>
-       <img className='h-14 w-14  '
+        <h3 className='font-bold p-2 my-2 pr-16 text-white' >Hi {user.displayName}</h3>
+       <img className=' pt-2 h-11 w-10 '
        
         // src='https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png?20201013161117'
+      
         src={user.photoURL}
         alt='userLogo'
         />
