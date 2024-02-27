@@ -92,11 +92,11 @@ const Login = () => {
       <Header />
 
       <div className='absolute'>
-        <img className='transform: scale-130 bg-gradient-to-t from-black bg-blend-lighten md:bg-blend-darken ' src='https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg'
+        <img className='transform: scale-130 bg-gradient-to-t from-black bg-blend-lighten md:bg-blend-darken bg-scroll' src='https://assets.nflxext.com/ffe/siteui/vlv3/c0b69670-89a3-48ca-877f-45ba7a60c16f/2642e08e-4202-490e-8e93-aff04881ee8a/IN-en-20240212-popsignuptwoweeks-perspective_alpha_website_large.jpg'
           alt='bg img' />
       </div>
 
-      <form onSubmit={(e) => e.preventDefault()} className="w-3/12 absolute bg-black bg-opacity-80 p-14 my-36 mx-auto right-0 left-0 " >
+      <form onSubmit={(e) => e.preventDefault()} className="w-4/12 absolute bg-black bg-opacity-80 p-14 my-36 mx-auto right-0 left-0 " >
         <h1 className='font-semibold text-4xl text-white p-2 m-2 '>
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>

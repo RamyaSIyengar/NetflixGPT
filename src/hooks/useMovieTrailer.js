@@ -15,11 +15,11 @@ const useMovieTrailer = (movieId) => {
         movieId+
        '/videos?language=en-US', API_OPTIONS)
         const json = await data.json();
-        // console.log(json)
+        console.log(json)
 
         const filterTrailers = json.results.filter((video )=> video.type==="Trailer")
         //if there is no data with trailer the take first video data
-        const trailer = filterTrailers.length ? filterTrailers[1] : json.results[0];
+        const trailer = filterTrailers.length ? filterTrailers[0] : json.results[0];
         // console.log(trailer)
         dispatch(addTrailerVideo(trailer))
         
