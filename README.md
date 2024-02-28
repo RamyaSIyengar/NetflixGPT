@@ -25,6 +25,9 @@
 - planning for MainContainer and secondary container
 - Embedded the youtube video and make it autoplay and mute and start at 10 secs
 - added Tailwind classes to make it cool
+- created secondary container with Movies List and Movie cards
+- fetched videos from TMDB API and updated in Redux Store
+- created Custom Hooks for fetching APIs 
 
 
 

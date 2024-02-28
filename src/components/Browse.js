@@ -5,11 +5,17 @@ import SecondaryVideoContainer from './SecondaryVideoContainer';
 import usePopularMovies from '../hooks/usePopularMovies';
 import useTopRatedMovies from '../hooks/useTopRatedMovies';
 import useUpcomingMovies from '../hooks/useUpcomingMovies';
+import GptSearch from './GptSearchPage';
+import { useSelector } from 'react-redux';
+import GptSearchPage from './GptSearchPage';
 
 
 
 const Browse = () => {
   
+  const showGptPage = useSelector(store => store.gpt.showGptSearchPage)
+
+  console.log(showGptPage)
   // Fetch Data from TDB API and update store can be moved out from this page and can be kept in custom hook
   useNowPlayingMovies();
   usePopularMovies();
@@ -17,10 +23,14 @@ const Browse = () => {
   useUpcomingMovies();
   
   return (
-    <div>
+    <div >
         <Header />
+        {showGptPage ? <GptSearchPage/> :
+        <>
         <MainVideoContainer />
-        <SecondaryVideoContainer />
+        <SecondaryVideoContainer/>
+        </>
+         }
         {
           /**
            * MainContainer
