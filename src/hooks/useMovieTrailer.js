@@ -15,7 +15,7 @@ const useMovieTrailer = (movieId) => {
         movieId+
        '/videos?language=en-US', API_OPTIONS)
         const json = await data.json();
-        console.log(json)
+        // console.log(json)
 
         const filterTrailers = json.results.filter((video )=> video.type==="Trailer")
         //if there is no data with trailer the take first video data

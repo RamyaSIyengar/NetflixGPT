@@ -15,7 +15,7 @@ const Browse = () => {
   
   const showGptPage = useSelector(store => store.gpt.showGptSearchPage)
 
-  console.log(showGptPage)
+  // console.log(showGptPage)
   // Fetch Data from TDB API and update store can be moved out from this page and can be kept in custom hook
   useNowPlayingMovies();
   usePopularMovies();
@@ -23,7 +23,7 @@ const Browse = () => {
   useUpcomingMovies();
   
   return (
-    <div >
+    <div className='' >
         <Header />
         {showGptPage ? <GptSearchPage/> :
         <>

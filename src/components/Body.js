@@ -21,7 +21,7 @@ const Body = () => {
    
 
   return (
-    <div>
+    <div className=''>
         {/* before adding routing
       <Login />
       <Browse /> */}

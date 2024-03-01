@@ -6,7 +6,7 @@ import useMovieTrailer from '../hooks/useMovieTrailer';
 const VideoBackground = ({movieId}) => {
 
     const trailerVideo = useSelector(store => store.movies?.trailerVideo);
-   console.log(trailerVideo)
+  //  console.log(trailerVideo)
 
     //Fetch Video trailer from Movies TMDB API website and updating store with the trailer video, moved to hooks
 

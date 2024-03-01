@@ -28,6 +28,9 @@
 - created secondary container with Movies List and Movie cards
 - fetched videos from TMDB API and updated in Redux Store
 - created Custom Hooks for fetching APIs 
+- added toggle GPT Search button on header 
+- Multi language feature in our App
+- Integrate GPT API  
 
 
 
@@ -43,7 +46,10 @@
    - Main Movie
        - Trailer in Background
        - Movie Title and description
-   - Movies Suggestions rows scrollable horizontally
+   - Movies list with movie cards rows scrollable horizontally
+
+
+
 
 
 

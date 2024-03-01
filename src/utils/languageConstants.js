@@ -1,12 +1,17 @@
 const lang = {
     en: {
-        search: "Search"
+        search: "Search",
+        gptSearchPlaceholder: "what would you like to watch today?",
     },
     hindi: {
-        search: "खोज"
+        search: "खोज",
+        gptSearchPlaceholder: "आज आप क्या देखना चाहेंगे?",
     },
     kannada: {
-        search: "ಹುಡುಕಿ"
-    }
+        search: "ಹುಡುಕಿ",
+        gptSearchPlaceholder: "ನೀವು ಇಂದು ಏನನ್ನು ವೀಕ್ಷಿಸಲು ಬಯಸುತ್ತೀರಿ?",
+    },
 
 }
+
+export default lang;
