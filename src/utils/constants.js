@@ -20,4 +20,6 @@ export const SUPPORTED_LANGUAGES =  [{identifier: "en", name: "English"},
                                      {identifier: "hindi", name: "Hindi"}, 
                                      {identifier: "kannada", name: "Kannada"}]
 
+export const OPENAI_API_KEY = "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";
+
 export default NETFLIX_LOGO
