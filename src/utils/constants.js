@@ -5,7 +5,7 @@ export const API_OPTIONS =  {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NTBhOGI2YTgyY2RkYTQwMWRkZDZkMmMzYjkxMzIxNSIsInN1YiI6IjY1ZGM0YWJiMDNiZjg0MDE4NGFmNTgyYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.BnqdOjzRAEZUtDS92uunRp-_bZ_c5n7Dpv_Eq07GBi8'
+      Authorization: 'Bearer '
     }
   };
 
@@ -20,6 +20,6 @@ export const SUPPORTED_LANGUAGES =  [{identifier: "en", name: "English"},
                                      {identifier: "hindi", name: "Hindi"}, 
                                      {identifier: "kannada", name: "Kannada"}]
 
-export const OPENAI_API_KEY = "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";
+export const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 export default NETFLIX_LOGO
